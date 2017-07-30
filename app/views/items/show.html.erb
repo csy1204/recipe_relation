@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Cate:</strong>
+  <%= @item.cate %>
+</p>
+
+<p>
+  <strong>Sub:</strong>
+  <%= @item.sub %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <% @item.recipes.each do |ii| %>
+    <%= ii.name %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <% @item.ingreds.each do |ii| %>
+    <%= ii.recipe.name  %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

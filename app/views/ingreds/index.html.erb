@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ingreds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingreds.each do |ingred| %>
+      <tr>
+        <td><%= ingred.recipe.name %></td>
+        <td><%= ingred.item.name %></td>
+        <td><%= ingred.item_id %></td>
+        <td><%= ingred.recipe_id %></td>
+        <td><%= link_to 'Show', ingred %></td>
+        <td><%= link_to 'Edit', edit_ingred_path(ingred) %></td>
+        <td><%= link_to 'Destroy', ingred, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingred', new_ingred_path %>
